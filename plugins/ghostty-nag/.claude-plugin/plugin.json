@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ghostty-nag",
+  "displayName": "Ghostty Nag",
+  "version": "0.1.0",
+  "description": "Keeps the Ghostty Dock icon bouncing until you refocus the terminal, so you stop missing that Claude is done or waiting on you.",
+  "author": {
+    "name": "James Elkins",
+    "url": "https://github.com/jameselkins"
+  },
+  "repository": "https://github.com/jameselkins/ghostty-nag",
+  "license": "MIT",
+  "keywords": ["ghostty", "macos", "notifications", "hooks", "terminal"],
+  "userConfig": {
+    "interval_seconds": {
+      "type": "number",
+      "title": "Seconds between bells",
+      "description": "How often to re-send BEL while Ghostty is unfocused. Ghostty bounces the Dock once per bell.",
+      "default": 10,
+      "min": 1,
+      "max": 300
+    },
+    "max_seconds": {
+      "type": "number",
+      "title": "Give up after (seconds)",
+      "description": "Stop nagging once this much time has passed, even if you never come back.",
+      "default": 300,
+      "min": 10,
+      "max": 3600
+    },
+    "bundle_id": {
+      "type": "string",
+      "title": "Terminal bundle ID",
+      "description": "macOS bundle identifier used for the focus check. Change this only if you run a Ghostty fork or nightly.",
+      "default": "com.mitchellh.ghostty"
+    }
+  }
+}

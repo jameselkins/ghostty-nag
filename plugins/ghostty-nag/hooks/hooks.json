@@ -1,0 +1,42 @@
+{
+  "description": "Bounce the Ghostty Dock icon until the terminal regains focus.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/ghostty-nag-bell.sh",
+            "async": true,
+            "timeout": 3600
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/ghostty-nag-bell.sh",
+            "async": true,
+            "timeout": 3600
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt|agent_needs_input",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/ghostty-nag-bell.sh",
+            "async": true,
+            "timeout": 3600
+          }
+        ]
+      }
+    ]
+  }
+}

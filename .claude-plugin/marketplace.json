@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "elkins-tools",
+  "owner": {
+    "name": "James Elkins",
+    "url": "https://github.com/jameselkins"
+  },
+  "description": "Small Claude Code plugins that make the terminal behave.",
+  "plugins": [
+    {
+      "name": "ghostty-nag",
+      "source": "./plugins/ghostty-nag",
+      "description": "Bounce the Ghostty Dock icon until you come back, whenever Claude finishes, blocks on a permission prompt, or dies on an API error."
+    }
+  ]
+}
